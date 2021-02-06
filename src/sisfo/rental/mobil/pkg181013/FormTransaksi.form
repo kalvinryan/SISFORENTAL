@@ -134,21 +134,13 @@
                   </Group>
                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblmobil" min="-2" pref="149" max="-2" attributes="0"/>
-                              <Component id="cmbddmobil" min="-2" pref="196" max="-2" attributes="0"/>
-                              <Component id="lbltipemobil" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="lblharga" min="-2" pref="187" max="-2" attributes="0"/>
-                              <Component id="lbltahunmobil" min="-2" pref="187" max="-2" attributes="0"/>
-                              <Component id="lblstatus" alignment="1" min="-2" pref="187" max="-2" attributes="0"/>
-                          </Group>
+                      <Component id="lblmobil" min="-2" pref="149" max="-2" attributes="0"/>
+                      <Component id="cmbddmobil" min="-2" pref="196" max="-2" attributes="0"/>
+                      <Component id="lbltipemobil" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                          <Component id="lblharga" min="-2" pref="187" max="-2" attributes="0"/>
+                          <Component id="lbltahunmobil" min="-2" pref="187" max="-2" attributes="0"/>
+                          <Component id="lblstatus" alignment="1" min="-2" pref="187" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="41" max="32767" attributes="0"/>

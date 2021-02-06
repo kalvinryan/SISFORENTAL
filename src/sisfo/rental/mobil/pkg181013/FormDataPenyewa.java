@@ -206,7 +206,7 @@ public class FormDataPenyewa extends javax.swing.JFrame {
             String email = txtemail.getText();         
             FormTransaksi fmtransaksi = new FormTransaksi(nama, nik, alamat, tlp, email);
             fmtransaksi.setVisible(true);
-           
+            this.setVisible(false);
         }
 
 //            try{

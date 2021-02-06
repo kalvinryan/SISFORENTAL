@@ -26,6 +26,22 @@ public class Formpengembalian extends javax.swing.JFrame {
         initComponents();
         ddmobil();
         load();
+        txtnama.setEnabled(false);
+        txtharga.setEnabled(false);
+        txthari.setEnabled(false);
+        txtkembali.setEnabled(false);
+        txtpeminjam.setEnabled(false);
+        txthari.setEnabled(false);
+    }
+    
+    public void refresh(){
+        cmbnopol.removeAllItems();
+        txtharga.setText("");
+        txthari.setText("");
+        txtkembali.setText("");
+        txtpeminjam.setText("");
+        txthari.setText("");
+        txtnama.setText("");
     }
     DefaultTableModel dtm;
     String status1;
@@ -337,6 +353,8 @@ public class Formpengembalian extends javax.swing.JFrame {
             hapus();
             cekstatus();
             load();
+            refresh();
+            
         } catch (Exception e) {
         }
        

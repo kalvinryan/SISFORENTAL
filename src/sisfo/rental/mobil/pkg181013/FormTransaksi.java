@@ -42,6 +42,11 @@ public class FormTransaksi extends javax.swing.JFrame {
         txtemail.setText(email);
         load();
         ddmobil();
+        txtnama.setEnabled(false);
+        txtNIK.setEnabled(false);
+        txtalamat.setEnabled(false);
+        txttlp.setEnabled(false);
+        txtemail.setEnabled(false);        
     }
     private void sipeminjam(){
         
@@ -51,9 +56,9 @@ public class FormTransaksi extends javax.swing.JFrame {
                                     + "('"+txtnama.getText()+"','"+txtNIK.getText()+"','"+txtalamat.getText()+"','"+txttlp.getText()+"','"+txtalamat.getText()+"');";                                    
                             PreparedStatement pst= c.prepareStatement(sqldata);
                             pst.execute();            
-            JOptionPane.showMessageDialog(this, "Data Peminjam Berhasil Disimpan");
+//            JOptionPane.showMessageDialog(this, "Data Peminjam Berhasil Disimpan");
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Error : "+e);
+            JOptionPane.showMessageDialog(this, e.getMessage());
         }
         
     }
@@ -62,7 +67,7 @@ public class FormTransaksi extends javax.swing.JFrame {
         try {
            Connection c =koneksi.getkoneksi();
            Statement stm = c.createStatement();
-           String sqldata="select * from tb_mobil";
+           String sqldata="select distinct * from tb_mobil";
            ResultSet rst =stm.executeQuery(sqldata);
             while (rst.next()) {
                 cmbddmobil.addItem(rst.getString("nopol"));
@@ -587,6 +592,7 @@ public class FormTransaksi extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnsimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsimpanActionPerformed
+        
         try {
             if (!jikakeluar()) {
                 JOptionPane.showMessageDialog(this, "maaf mobil ini sedang tidak tersedia");
@@ -604,9 +610,10 @@ public class FormTransaksi extends javax.swing.JFrame {
                             pst.execute();
                             JOptionPane.showMessageDialog(null, "Penyimpanan Data Berhasil");
                             cekstatus();
-                            sipeminjam();
+                            sipeminjam();                            
+//                            ddmobil();
                             load();
-                            
+                        
                     }
                     catch (SQLException e) {
                         JOptionPane.showMessageDialog(this, e.getMessage());
@@ -615,13 +622,14 @@ public class FormTransaksi extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
-        sipeminjam();
+        cmbddmobil.removeAllItems();
         ddmobil();
+        
         
     }//GEN-LAST:event_btnsimpanActionPerformed
 
     private void btnkembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnkembaliActionPerformed
-        new FormMenu().setVisible(true);
+        new FormDataPenyewa().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnkembaliActionPerformed
 
@@ -630,7 +638,7 @@ public class FormTransaksi extends javax.swing.JFrame {
         try {
            Connection c =koneksi.getkoneksi();
            Statement stm = c.createStatement();
-           String sqldata="select * from tb_mobil where nopol='"+ddmobil+"'";
+           String sqldata="select distinct* from tb_mobil where nopol='"+ddmobil+"'";
            ResultSet rst =stm.executeQuery(sqldata);
             while (rst.next()) {
                 this.lblmobil.setText(rst.getString("merek"));  

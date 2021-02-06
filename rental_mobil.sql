@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 05, 2021 at 02:35 AM
+-- Generation Time: Feb 06, 2021 at 05:36 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -58,32 +58,12 @@ INSERT INTO `tb_mobil` (`id_mobil`, `merek`, `tipe`, `tahun`, `nopol`, `harga`, 
 
 CREATE TABLE `tb_peminjam` (
   `id_peminjam` int(20) NOT NULL,
-  `nama` varchar(20) NOT NULL,
+  `nama` varchar(100) NOT NULL,
   `nik` int(20) NOT NULL,
   `alamat` varchar(50) NOT NULL,
   `telp` varchar(20) NOT NULL,
   `email` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tb_peminjam`
---
-
-INSERT INTO `tb_peminjam` (`id_peminjam`, `nama`, `nik`, `alamat`, `telp`, `email`) VALUES
-(14, 'Qori', 0, 'Bekasi', '07519400390', 'Qori@gmail.com'),
-(13, 'Glenn', 0, 'Cicalengka', '085289388949', 'jksolslopdm'),
-(10, 'Ismail', 0, 'Tasik', '081353666345', 'mail.com'),
-(17, 'Sidiq', 0, 'Padang	', '085276878499', 'Shidiq.com'),
-(18, 'Qoriah Indah Susilow', 0, 'Jl AH Nasution, Cibiru, Bandung', '081317812207', 'Qoriahindah@gmail'),
-(20, 'ihsan miftahul huda', 0, 'bandung', '089232033927', 'mask@gmail.com'),
-(21, 'ihsan miftahul huda', 0, 'Cibiru', '089232033927', 'mask@gmail.com'),
-(22, 'alvito', 0, 'kajsdhakdhkadhkawud	', '085799504760', 'alvito@gmail.com'),
-(23, 'Ronal', 0, 'Pondok gede', '089765121907', 'ronal@gmail.com'),
-(24, 'Ronal', 0, 'Pondok gede', '089765121907', 'ronal@gmail.com'),
-(25, 'Alvito', 0, 'Jl. Tebet	', '085182731827', 'alvito@gmail.com'),
-(26, 'Alvito', 0, 'Jl. Tebet	', '085182731827', 'alvito@gmail.com'),
-(27, 'Ronaldo', 0, 'JL. Pondok Gede', '0878787878787878', 'ronaldo@gmail.com'),
-(28, 'Ronaldo', 0, 'JL. Pondok Gede', '0878787878787878', 'ronaldo@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -93,7 +73,7 @@ INSERT INTO `tb_peminjam` (`id_peminjam`, `nama`, `nik`, `alamat`, `telp`, `emai
 
 CREATE TABLE `tb_transaksi` (
   `id_transaksi` int(20) NOT NULL,
-  `peminjam` varchar(20) NOT NULL,
+  `peminjam` varchar(100) NOT NULL,
   `nopol` varchar(20) DEFAULT NULL,
   `harga` varchar(20) NOT NULL,
   `tgl_pinjaman` date DEFAULT NULL,
@@ -168,13 +148,13 @@ ALTER TABLE `tb_mobil`
 -- AUTO_INCREMENT for table `tb_peminjam`
 --
 ALTER TABLE `tb_peminjam`
-  MODIFY `id_peminjam` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_peminjam` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
-  MODIFY `id_transaksi` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_transaksi` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `user`
